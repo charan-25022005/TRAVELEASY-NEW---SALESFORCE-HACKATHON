@@ -20,12 +20,37 @@ public inherited sharing class ExpenseReportTriggerHandler {
 
     public static void handleAfterUpdate(List<Expense_Report__c> newReports, Map<Id, Expense_Report__c> oldMap) {
         List<Id> approvedReportIds = new List<Id>();
+        List<Id> decisionReportIds = new List<Id>();
+        List<Id> completedReimbursementIds = new List<Id>();
+        List<Id> failedReimbursementIds = new List<Id>();
 
         for (Expense_Report__c rep : newReports) {
             Expense_Report__c oldRep = oldMap.get(rep.Id);
+            if ((rep.Status__c == 'Approved' && oldRep.Status__c != 'Approved') ||
+                (rep.Status__c == 'Rejected' && oldRep.Status__c != 'Rejected')) {
+                decisionReportIds.add(rep.Id);
+            }
             if (rep.Status__c == 'Approved' && oldRep.Status__c != 'Approved') {
                 approvedReportIds.add(rep.Id);
             }
+            // Reimbursement outcome emails - sent ONLY upon confirmed status transition
+            if (rep.Reimbursement_Status__c == 'Completed' && oldRep.Reimbursement_Status__c != 'Completed') {
+                completedReimbursementIds.add(rep.Id);
+            } else if (rep.Reimbursement_Status__c == 'Failed' && oldRep.Reimbursement_Status__c != 'Failed') {
+                failedReimbursementIds.add(rep.Id);
+            }
+        }
+
+        if (!decisionReportIds.isEmpty()) {
+            TravelEasyEmailNotificationService.sendExpenseReportDecisionEmail(decisionReportIds);
+        }
+
+        if (!completedReimbursementIds.isEmpty()) {
+            TravelEasyEmailNotificationService.sendReimbursementOutcomeEmail(completedReimbursementIds, true, null);
+        }
+
+        if (!failedReimbursementIds.isEmpty()) {
+            TravelEasyEmailNotificationService.sendReimbursementOutcomeEmail(failedReimbursementIds, false, 'Payment processing failed or rejected during settlement.');
         }
 
         if (!approvedReportIds.isEmpty() && !System.isQueueable() && !System.isBatch()) {

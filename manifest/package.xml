@@ -22,6 +22,8 @@
         <members>ReimbursementScheduler</members>
         <members>TravelEasyUiController</members>
         <members>TravelEasyUiControllerTest</members>
+        <members>TravelEasyEmailNotificationService</members>
+        <members>TravelEasyEmailNotificationServiceTest</members>
         <name>ApexClass</name>
     </types>
     <types>

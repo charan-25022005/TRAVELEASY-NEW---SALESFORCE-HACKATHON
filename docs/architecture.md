@@ -67,4 +67,5 @@
   - `Travel_Request_Submission_Flow`
   - `Expense_Report_Submission_Flow`
   - `Expense_Exception_Notification_Flow`
+- **Email Notification Service:** `TravelEasyEmailNotificationService` strictly dispatches email notifications (no in-app notifications) for Travel Request decisions, Expense Report decisions, and confirmed Reimbursement outcomes with recursion prevention and error isolation.
 - **Integration Logging:** Audits all outbound and inbound transactions in `Integration_Log__c` without storing sensitive tokens.

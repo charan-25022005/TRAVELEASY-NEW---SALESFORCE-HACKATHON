@@ -24,6 +24,7 @@ TravelEasy centralizes employee travel requests, role-based policy enforcement, 
    - `Expense_Report_Submission_Flow`
    - `Expense_Exception_Notification_Flow`
 7. **Executive Reporting & Dashboards:** Real-time visibility into travel requests, spend variance, policy exception trends, and reimbursement SLA.
+8. **Dedicated Email Notification Engine:** `TravelEasyEmailNotificationService` dispatches clean email alerts exclusively (no in-app notifications) for Travel Request decisions, Expense Report decisions, and confirmed Reimbursement outcomes with recursion prevention and error isolation.
 
 ---
 

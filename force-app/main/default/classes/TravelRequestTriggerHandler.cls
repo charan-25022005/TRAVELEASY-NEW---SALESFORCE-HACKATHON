@@ -18,7 +18,17 @@ public inherited sharing class TravelRequestTriggerHandler {
     }
 
     public static void handleAfterUpdate(List<Travel_Request__c> newRecords, Map<Id, Travel_Request__c> oldMap) {
-        // Post-update orchestration hook
+        List<Id> decisionTrIds = new List<Id>();
+        for (Travel_Request__c tr : newRecords) {
+            Travel_Request__c oldTr = oldMap.get(tr.Id);
+            if ((tr.Status__c == 'Approved' && oldTr.Status__c != 'Approved') ||
+                (tr.Status__c == 'Rejected' && oldTr.Status__c != 'Rejected')) {
+                decisionTrIds.add(tr.Id);
+            }
+        }
+        if (!decisionTrIds.isEmpty()) {
+            TravelEasyEmailNotificationService.sendTravelRequestDecisionEmail(decisionTrIds);
+        }
     }
 
     private static void assignDefaultApprovers(List<Travel_Request__c> records) {
