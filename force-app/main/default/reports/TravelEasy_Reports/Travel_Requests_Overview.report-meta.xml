@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Travel_Request__c.Employee__c</field>
+    </columns>
+    <columns>
+        <field>Travel_Request__c.Destination__c</field>
+    </columns>
+    <columns>
+        <field>Travel_Request__c.Travel_Start_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Travel_Request__c.Estimated_Cost__c</field>
+    </columns>
+    <columns>
+        <field>Travel_Request__c.Approver__c</field>
+    </columns>
+    <description>Overview of all travel requests grouped by lifecycle status.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Travel_Request__c.Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Travel Requests Overview</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Travel_Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exception_Type__c</fullName>
+    <description>Category of violation detected by Smart Expense Control Service.</description>
+    <externalId>false</externalId>
+    <label>Exception Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Policy Violation</fullName>
+                <default>false</default>
+                <label>Policy Violation</label>
+            </value>
+            <value>
+                <fullName>Missing Receipt</fullName>
+                <default>false</default>
+                <label>Missing Receipt</label>
+            </value>
+            <value>
+                <fullName>Potential Duplicate</fullName>
+                <default>false</default>
+                <label>Potential Duplicate</label>
+            </value>
+            <value>
+                <fullName>Budget Overrun</fullName>
+                <default>false</default>
+                <label>Budget Overrun</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Manager_Review__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flags whether expenses in this category unconditionally mandate dedicated manager review.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Requires Manager Review</label>
+    <type>Checkbox</type>
+</CustomField>

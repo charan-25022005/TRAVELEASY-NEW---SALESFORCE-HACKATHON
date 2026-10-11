@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Smart Expense &amp; Policy Control Engine" icon-name="custom:custom41">
+        <div class="slds-p-around_medium">
+            <template if:true={summary}>
+                <!-- Status Badges -->
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_small">Report Total</div>
+                            <div class="slds-text-heading_medium slds-m-top_xx-small">₹{summary.totalAmount}</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_small">Trip Budget</div>
+                            <div class="slds-text-heading_medium slds-m-top_xx-small">₹{summary.estimatedCost}</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_small">Budget Variance</div>
+                            <div class="slds-text-heading_medium slds-m-top_xx-small" style={varianceStyle}>
+                                ₹{summary.variance}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blocking Exceptions Alert -->
+                <template if:true={summary.hasBlockingExceptions}>
+                    <div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_small" role="alert">
+                        <span class="slds-assistive-text">error</span>
+                        <h2>
+                            ⚠️ Action Required: {summary.openExceptions} open blocking exception(s) detected. Report approval is locked until exceptions are reviewed.
+                        </h2>
+                    </div>
+                </template>
+
+                <template if:false={summary.hasBlockingExceptions}>
+                    <div class="slds-notify slds-notify_alert slds-alert_success slds-m-bottom_small" role="alert">
+                        <span class="slds-assistive-text">success</span>
+                        <h2>
+                            ✅ All policy checks passed. No unresolved blocking exceptions.
+                        </h2>
+                    </div>
+                </template>
+
+                <!-- Exception Count Summary -->
+                <div class="slds-m-top_small">
+                    <span class="slds-badge slds-badge_lightest slds-m-right_x-small">Total Exceptions: {summary.totalExceptions}</span>
+                    <span class="slds-badge slds-badge_lightest">Open Exceptions: {summary.openExceptions}</span>
+                </div>
+            </template>
+
+            <template if:false={summary}>
+                <lightning-spinner alternative-text="Loading analysis..." size="small"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

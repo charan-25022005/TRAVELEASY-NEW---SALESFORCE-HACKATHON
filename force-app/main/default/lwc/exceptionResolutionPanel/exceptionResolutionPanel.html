@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Exception Resolution &amp; Audit Panel" icon-name="standard:approval">
+        <div class="slds-p-around_medium">
+            <div class="slds-m-bottom_small">
+                <lightning-combobox
+                    name="action"
+                    label="Resolution Action"
+                    value={selectedAction}
+                    placeholder="Select resolution outcome"
+                    options={actionOptions}
+                    onchange={handleActionChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <div class="slds-m-bottom_medium">
+                <lightning-textarea
+                    name="comments"
+                    label="Justification Comments"
+                    placeholder="Provide mandatory review reasoning (e.g. Approved client justification, verified receipt on file, etc.)"
+                    value={comments}
+                    onchange={handleCommentsChange}
+                    required>
+                </lightning-textarea>
+            </div>
+
+            <div class="slds-grid slds-grid_align-end">
+                <lightning-button
+                    variant="brand"
+                    label="Submit Decision"
+                    icon-name="utility:check"
+                    onclick={handleSubmitDecision}
+                    disabled={isSubmitDisabled}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

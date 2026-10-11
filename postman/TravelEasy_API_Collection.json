@@ -1,0 +1,118 @@
+{
+  "info": {
+    "_postman_id": "c1f7a421-4f11-4820-9cb5-traveleasy01",
+    "name": "TravelEasy — Salesforce REST API Collection",
+    "description": "Collection for submitting and testing TravelEasy travel requests via Apex REST API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Submit Travel Request - Valid Employee (201 Created)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeName\": \"Charan K\",\n  \"employeeId\": \"EMP101\",\n  \"jobRole\": \"Employee\",\n  \"destination\": \"Bengaluru\",\n  \"purpose\": \"Client Architecture Workshop\",\n  \"travelStartDate\": \"2027-02-15\",\n  \"travelEndDate\": \"2027-02-18\",\n  \"estimatedCost\": 15000\n}"
+        },
+        "url": {
+          "raw": "{{instance_url}}/services/apexrest/traveleasy/travel-requests",
+          "host": ["{{instance_url}}"],
+          "path": ["services", "apexrest", "traveleasy", "travel-requests"]
+        }
+      }
+    },
+    {
+      "name": "2. Submit Travel Request - Valid Manager (201 Created)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeName\": \"Priya Manager\",\n  \"employeeId\": \"MGR201\",\n  \"jobRole\": \"Manager\",\n  \"destination\": \"Mumbai\",\n  \"purpose\": \"Executive Quarterly Review\",\n  \"travelStartDate\": \"2027-03-01\",\n  \"travelEndDate\": \"2027-03-05\",\n  \"estimatedCost\": 45000\n}"
+        },
+        "url": {
+          "raw": "{{instance_url}}/services/apexrest/traveleasy/travel-requests",
+          "host": ["{{instance_url}}"],
+          "path": ["services", "apexrest", "traveleasy", "travel-requests"]
+        }
+      }
+    },
+    {
+      "name": "3. Submit Travel Request - Invalid Past Date (400 Bad Request)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeName\": \"Charan K\",\n  \"employeeId\": \"EMP101\",\n  \"jobRole\": \"Employee\",\n  \"destination\": \"Delhi\",\n  \"purpose\": \"Past Trip Test\",\n  \"travelStartDate\": \"2020-01-01\",\n  \"travelEndDate\": \"2020-01-05\",\n  \"estimatedCost\": 12000\n}"
+        },
+        "url": {
+          "raw": "{{instance_url}}/services/apexrest/traveleasy/travel-requests",
+          "host": ["{{instance_url}}"],
+          "path": ["services", "apexrest", "traveleasy", "travel-requests"]
+        }
+      }
+    },
+    {
+      "name": "4. Submit Travel Request - Role Escalation / Impersonation (403 Forbidden)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeName\": \"Charan K\",\n  \"employeeId\": \"EMP101\",\n  \"jobRole\": \"Manager\",\n  \"destination\": \"Hyderabad\",\n  \"purpose\": \"Security Test\",\n  \"travelStartDate\": \"2027-04-10\",\n  \"travelEndDate\": \"2027-04-12\",\n  \"estimatedCost\": 35000\n}"
+        },
+        "url": {
+          "raw": "{{instance_url}}/services/apexrest/traveleasy/travel-requests",
+          "host": ["{{instance_url}}"],
+          "path": ["services", "apexrest", "traveleasy", "travel-requests"]
+        }
+      }
+    }
+  ]
+}

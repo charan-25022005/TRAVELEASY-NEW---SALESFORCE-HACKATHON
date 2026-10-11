@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Blocking_Exceptions__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Automatically maintained by trigger. Set to true if any unresolved High or Critical exceptions are associated with this report.</description>
+    <externalId>false</externalId>
+    <label>Has Blocking Exceptions</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

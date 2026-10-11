@@ -1,0 +1,17 @@
+{
+  "id": "traveleasy-env-001",
+  "name": "TravelEasy - Salesforce Environment",
+  "values": [
+    {
+      "key": "instance_url",
+      "value": "https://wise-fox-rmu03e-dev-ed.trailblaze.my.salesforce.com",
+      "enabled": true
+    },
+    {
+      "key": "access_token",
+      "value": "PASTE_YOUR_OAUTH_TOKEN_HERE",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

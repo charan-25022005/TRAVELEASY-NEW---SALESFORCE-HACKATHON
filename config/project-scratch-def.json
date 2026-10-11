@@ -1,0 +1,13 @@
+{
+  "orgName": "TravelEasy Dev Org",
+  "edition": "Developer",
+  "features": ["EnablePRM"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}
