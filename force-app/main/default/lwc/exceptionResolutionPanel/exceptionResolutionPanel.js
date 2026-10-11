@@ -10,7 +10,7 @@ export default class ExceptionResolutionPanel extends LightningElement {
 
     actionOptions = [
         { label: 'Resolve Exception', value: 'Resolved' },
-        { label: 'Waive Exception', value: 'Waive' },
+        { label: 'Waive Exception', value: 'Waived' },
         { label: 'Approve with Exception', value: 'Approved' },
         { label: 'Reject / Flag Violation', value: 'Rejected' }
     ];

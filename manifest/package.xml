@@ -80,6 +80,14 @@
         <name>FlexiPage</name>
     </types>
     <types>
+        <members>Expense_Item__c-Expense Item Layout</members>
+        <members>Expense_Report__c-Expense Report Layout</members>
+        <members>Expense_Validation_Exception__c-Expense Validation Exception Layout</members>
+        <members>Integration_Log__c-Integration Log Layout</members>
+        <members>Travel_Request__c-Travel Request Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
         <members>smartExpenseChecker</members>
         <members>exceptionResolutionPanel</members>
         <name>LightningComponentBundle</name>
