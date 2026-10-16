@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Expense_Validation_Exception__c$Name</field>
+    </columns>
+    <columns>
+        <field>Expense_Validation_Exception__c$Expense_Report__c</field>
+    </columns>
+    <columns>
+        <field>Expense_Validation_Exception__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Expense_Validation_Exception__c$Is_Blocking__c</field>
+    </columns>
+    <columns>
+        <field>Expense_Validation_Exception__c$Reviewer__c</field>
+    </columns>
+    <description>Distribution of smart expense exceptions grouped by severity and type.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Expense_Validation_Exception__c$Severity__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Expense_Validation_Exception__c$Exception_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Smart Expense Exceptions</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Smart_Expense_Exceptions__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

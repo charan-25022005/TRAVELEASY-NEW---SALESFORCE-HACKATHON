@@ -9,7 +9,7 @@ public inherited sharing class ProcessReimbursementQueueable implements Queueabl
         this.reportIds = reportIds;
     }
 
-    public void execute(QueueContext qc) {
+    public void execute(System.QueueableContext qc) {
         if (reportIds == null || reportIds.isEmpty()) return;
 
         List<Expense_Report__c> reportsToProcess = [
@@ -29,7 +29,7 @@ public inherited sharing class ProcessReimbursementQueueable implements Queueabl
         }
 
         if (!reportsToUpdate.isEmpty()) {
-            Database.update(reportsToUpdate, false, AccessLevel.USER_MODE);
+            Database.update(reportsToUpdate, false, AccessLevel.SYSTEM_MODE);
         }
     }
 }

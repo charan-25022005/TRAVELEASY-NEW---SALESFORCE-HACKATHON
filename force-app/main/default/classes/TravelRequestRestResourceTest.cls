@@ -39,6 +39,13 @@ private class TravelRequestRestResourceTest {
             ManagerId = mgr.Id
         );
         insert emp;
+
+        PermissionSet psEmp = [SELECT Id FROM PermissionSet WHERE Name = 'TravelEasy_Employee' LIMIT 1];
+        PermissionSet psMgr = [SELECT Id FROM PermissionSet WHERE Name = 'TravelEasy_Manager' LIMIT 1];
+        insert new List<PermissionSetAssignment>{
+            new PermissionSetAssignment(AssigneeId = emp.Id, PermissionSetId = psEmp.Id),
+            new PermissionSetAssignment(AssigneeId = mgr.Id, PermissionSetId = psMgr.Id)
+        };
     }
 
     @IsTest

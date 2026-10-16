@@ -4,29 +4,37 @@
  */
 public inherited sharing class ExpenseItemTriggerHandler {
 
+    public static Boolean bypass = false;
+
     public static void handleBeforeInsert(List<Expense_Item__c> newItems) {
+        if (bypass) return;
         // Pre-insert checks
     }
 
     public static void handleBeforeUpdate(List<Expense_Item__c> newItems, Map<Id, Expense_Item__c> oldMap) {
+        if (bypass) return;
         // Pre-update checks
     }
 
     public static void handleAfterInsert(List<Expense_Item__c> newItems) {
+        if (bypass) return;
         recalculateParentTotals(newItems);
         runPolicyEvaluation(newItems);
     }
 
     public static void handleAfterUpdate(List<Expense_Item__c> newItems, Map<Id, Expense_Item__c> oldMap) {
+        if (bypass) return;
         recalculateParentTotals(newItems);
         runPolicyEvaluation(newItems);
     }
 
     public static void handleAfterDelete(List<Expense_Item__c> oldItems) {
+        if (bypass) return;
         recalculateParentTotals(oldItems);
     }
 
     public static void handleAfterUndelete(List<Expense_Item__c> newItems) {
+        if (bypass) return;
         recalculateParentTotals(newItems);
         runPolicyEvaluation(newItems);
     }
@@ -64,7 +72,7 @@ public inherited sharing class ExpenseItemTriggerHandler {
         }
 
         if (!reportsToUpdate.isEmpty()) {
-            Database.update(reportsToUpdate, false, AccessLevel.USER_MODE);
+            Database.update(reportsToUpdate, false, AccessLevel.SYSTEM_MODE);
         }
     }
 
@@ -72,7 +80,7 @@ public inherited sharing class ExpenseItemTriggerHandler {
         SmartExpenseControlService.EvaluationResult evalResult = SmartExpenseControlService.evaluateExpenseItems(items);
 
         if (!evalResult.exceptions.isEmpty()) {
-            Database.insert(evalResult.exceptions, false, AccessLevel.USER_MODE);
+            Database.insert(evalResult.exceptions, false, AccessLevel.SYSTEM_MODE);
         }
 
         if (!evalResult.flaggedItems.isEmpty()) {
@@ -96,7 +104,7 @@ public inherited sharing class ExpenseItemTriggerHandler {
                         Status__c = 'Exception Flagged'
                     ));
                 }
-                Database.update(reportsToFlag, false, AccessLevel.USER_MODE);
+                Database.update(reportsToFlag, false, AccessLevel.SYSTEM_MODE);
             }
         }
     }

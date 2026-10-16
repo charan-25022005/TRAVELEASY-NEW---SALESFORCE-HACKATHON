@@ -71,7 +71,7 @@ private class TravelEasyEmailNotificationServiceTest {
             Employee__c = emp.Id,
             Approver__c = mgr.Id,
             Total_Amount__c = 15000,
-            Status__c = 'Under Review',
+            Status__c = 'Draft',
             Has_Blocking_Exceptions__c = false
         );
         insert rep;
@@ -278,11 +278,16 @@ private class TravelEasyEmailNotificationServiceTest {
         Test.startTest();
         rep.Status__c = 'Approved';
         update rep;
+
+        // Verify expense report record status is successfully Approved in the synchronous transaction
+        Expense_Report__c approvedRep = [SELECT Id, Status__c FROM Expense_Report__c WHERE Id = :rep.Id];
+        System.assertEquals('Approved', approvedRep.Status__c, 'Business transaction must commit successfully');
+
         Test.stopTest();
 
-        // Verify expense report record status is successfully Approved despite any email sending limitations in test context
-        Expense_Report__c verifiedRep = [SELECT Id, Status__c FROM Expense_Report__c WHERE Id = :rep.Id];
-        System.assertEquals('Approved', verifiedRep.Status__c, 'Business transaction must commit successfully');
+        // Following completion of downstream asynchronous reimbursement queueable, verify full lifecycle status
+        Expense_Report__c reimbursedRep = [SELECT Id, Status__c FROM Expense_Report__c WHERE Id = :rep.Id];
+        System.assertEquals('Reimbursed', reimbursedRep.Status__c, 'Reimbursement queueable must complete business lifecycle');
     }
 
     @IsTest
@@ -298,12 +303,22 @@ private class TravelEasyEmailNotificationServiceTest {
         rep.Status__c = 'Approved';
         rep.Reimbursement_Status__c = 'Pending';
         update rep;
-        Test.stopTest();
 
-        // Verify that NO "Reimbursement Payment Confirmed" email was sent
+        // Verify that upon approval alone, before asynchronous disbursement completes, NO payment success email is sent
         for (String subj : TravelEasyEmailNotificationService.testSentEmailSubjects) {
             System.assert(!subj.contains('Reimbursement Payment Confirmed'),
                 'Payment success email must NEVER be sent upon approval alone without confirmed payment completion');
         }
+
+        Test.stopTest();
+
+        // After confirmed asynchronous completion, the payment confirmed email is sent
+        Boolean foundPaymentSuccess = false;
+        for (String subj : TravelEasyEmailNotificationService.testSentEmailSubjects) {
+            if (subj.contains('Reimbursement Payment Confirmed')) {
+                foundPaymentSuccess = true;
+            }
+        }
+        System.assert(foundPaymentSuccess, 'Payment success email should be sent after payment completion is confirmed');
     }
 }

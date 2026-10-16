@@ -73,7 +73,10 @@ public with sharing class TravelEasyUiController {
         exc.Resolution_Comments__c = comments;
         exc.Resolved_Date__c = System.now();
 
-        Database.update(exc, AccessLevel.USER_MODE);
+        if (!Schema.sObjectType.Expense_Validation_Exception__c.isUpdateable()) {
+            throw new AuraHandledException('Insufficient permissions to update exception records.');
+        }
+        update exc;
         return 'Exception status successfully updated to ' + action;
     }
 }

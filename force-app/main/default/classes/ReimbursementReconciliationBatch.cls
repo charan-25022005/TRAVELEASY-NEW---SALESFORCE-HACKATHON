@@ -29,7 +29,7 @@ public inherited sharing class ReimbursementReconciliationBatch implements Datab
         }
 
         if (!reportsToUpdate.isEmpty()) {
-            Database.update(reportsToUpdate, false, AccessLevel.USER_MODE);
+            Database.update(reportsToUpdate, false, AccessLevel.SYSTEM_MODE);
         }
     }
 

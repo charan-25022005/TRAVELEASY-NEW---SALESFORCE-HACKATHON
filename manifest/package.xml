@@ -107,9 +107,17 @@
         <name>Report</name>
     </types>
     <types>
+        <members>Smart_Expense_Exceptions</members>
+        <name>ReportType</name>
+    </types>
+    <types>
         <members>TravelEasy_Dashboards</members>
         <members>TravelEasy_Dashboards/TravelEasy_Executive_Spend_Control_Dashboard</members>
         <name>Dashboard</name>
+    </types>
+    <types>
+        <members>Expense_Report__c.Submit_for_Review</members>
+        <name>QuickAction</name>
     </types>
     <version>60.0</version>
 </Package>

@@ -5,9 +5,12 @@
  */
 public inherited sharing class ExpenseValidationExceptionTriggerHandler {
 
+    public static Boolean bypass = false;
+
     private static final Set<String> RESOLVED_STATUSES = new Set<String>{'Resolved', 'Waived', 'Approved'};
 
     public static void handleBeforeInsert(List<Expense_Validation_Exception__c> newExceptions) {
+        if (bypass) return;
         for (Expense_Validation_Exception__c exc : newExceptions) {
             if (exc.Severity__c == 'High' || exc.Severity__c == 'Critical') {
                 exc.Is_Blocking__c = true;
@@ -16,6 +19,7 @@ public inherited sharing class ExpenseValidationExceptionTriggerHandler {
     }
 
     public static void handleBeforeUpdate(List<Expense_Validation_Exception__c> newExceptions, Map<Id, Expense_Validation_Exception__c> oldMap) {
+        if (bypass) return;
         for (Expense_Validation_Exception__c exc : newExceptions) {
             Expense_Validation_Exception__c oldExc = oldMap.get(exc.Id);
 
@@ -45,18 +49,22 @@ public inherited sharing class ExpenseValidationExceptionTriggerHandler {
     }
 
     public static void handleAfterInsert(List<Expense_Validation_Exception__c> newExceptions) {
+        if (bypass) return;
         synchronizeParentReportStatus(getParentReportIds(newExceptions));
     }
 
     public static void handleAfterUpdate(List<Expense_Validation_Exception__c> newExceptions, Map<Id, Expense_Validation_Exception__c> oldMap) {
+        if (bypass) return;
         synchronizeParentReportStatus(getParentReportIds(newExceptions));
     }
 
     public static void handleAfterDelete(List<Expense_Validation_Exception__c> oldExceptions) {
+        if (bypass) return;
         synchronizeParentReportStatus(getParentReportIds(oldExceptions));
     }
 
     public static void handleAfterUndelete(List<Expense_Validation_Exception__c> newExceptions) {
+        if (bypass) return;
         synchronizeParentReportStatus(getParentReportIds(newExceptions));
     }
 
@@ -144,7 +152,7 @@ public inherited sharing class ExpenseValidationExceptionTriggerHandler {
         }
 
         if (!reportsToUpdate.isEmpty()) {
-            Database.update(reportsToUpdate, false, AccessLevel.USER_MODE);
+            Database.update(reportsToUpdate, false, AccessLevel.SYSTEM_MODE);
         }
     }
 }

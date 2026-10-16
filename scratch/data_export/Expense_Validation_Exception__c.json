@@ -1,0 +1,1010 @@
+﻿{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s4lndQAA"
+        },
+        "Id": "a02dL00000s4lndQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00000",
+        "CreatedDate": "2026-10-12T03:39:05.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T03:39:05.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T03:39:05.000+0000",
+        "LastViewedDate": "2026-10-12T05:22:21.000+0000",
+        "LastReferencedDate": "2026-10-12T05:22:21.000+0000",
+        "Expense_Report__c": "a01dL00002a0VhBQAU",
+        "Exception_Type__c": "Missing Receipt",
+        "Severity__c": "Medium",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s4qcFQAQ"
+        },
+        "Id": "a02dL00000s4qcFQAQ",
+        "IsDeleted": false,
+        "Name": "EXC-00001",
+        "CreatedDate": "2026-10-12T05:14:06.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T05:14:06.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T05:14:06.000+0000",
+        "LastViewedDate": "2026-10-12T05:19:02.000+0000",
+        "LastReferencedDate": "2026-10-12T05:19:02.000+0000",
+        "Expense_Report__c": "a01dL00002a0VhBQAU",
+        "Exception_Type__c": "Missing Receipt",
+        "Severity__c": "Medium",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s4zXFQAY"
+        },
+        "Id": "a02dL00000s4zXFQAY",
+        "IsDeleted": false,
+        "Name": "EXC-00002",
+        "CreatedDate": "2026-10-12T05:15:43.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T05:15:43.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T05:15:43.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a0VhBQAU",
+        "Exception_Type__c": "Missing Receipt",
+        "Severity__c": "Medium",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s58VhQAI"
+        },
+        "Id": "a02dL00000s58VhQAI",
+        "IsDeleted": false,
+        "Name": "EXC-00003",
+        "CreatedDate": "2026-10-12T06:07:42.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T06:37:45.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T06:37:45.000+0000",
+        "LastViewedDate": "2026-10-12T11:58:56.000+0000",
+        "LastReferencedDate": "2026-10-12T11:58:56.000+0000",
+        "Expense_Report__c": "a01dL00002a0hdXQAQ",
+        "Exception_Type__c": "Missing Receipt",
+        "Severity__c": "Critical",
+        "Status__c": "Resolved"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6KszQAE"
+        },
+        "Id": "a02dL00000s6KszQAE",
+        "IsDeleted": false,
+        "Name": "EXC-00004",
+        "CreatedDate": "2026-10-12T10:47:41.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T10:47:41.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T10:47:41.000+0000",
+        "LastViewedDate": "2026-10-12T11:57:11.000+0000",
+        "LastReferencedDate": "2026-10-12T11:57:11.000+0000",
+        "Expense_Report__c": "a01dL00002a3xNbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6apiQAA"
+        },
+        "Id": "a02dL00000s6apiQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00009",
+        "CreatedDate": "2026-10-12T17:26:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:26:20.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:26:20.000+0000",
+        "LastViewedDate": "2026-10-12T17:36:20.000+0000",
+        "LastReferencedDate": "2026-10-12T17:36:20.000+0000",
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6apjQAA"
+        },
+        "Id": "a02dL00000s6apjQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00010",
+        "CreatedDate": "2026-10-12T17:26:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:26:20.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:26:20.000+0000",
+        "LastViewedDate": "2026-10-12T17:40:15.000+0000",
+        "LastReferencedDate": "2026-10-12T17:40:15.000+0000",
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6apkQAA"
+        },
+        "Id": "a02dL00000s6apkQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00011",
+        "CreatedDate": "2026-10-12T17:26:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:26:20.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:26:20.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fB3QAI"
+        },
+        "Id": "a02dL00000s6fB3QAI",
+        "IsDeleted": false,
+        "Name": "EXC-00006",
+        "CreatedDate": "2026-10-12T17:23:56.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:23:56.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:23:56.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fFtQAI"
+        },
+        "Id": "a02dL00000s6fFtQAI",
+        "IsDeleted": false,
+        "Name": "EXC-00007",
+        "CreatedDate": "2026-10-12T17:25:01.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:25:01.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:25:01.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fJ7QAI"
+        },
+        "Id": "a02dL00000s6fJ7QAI",
+        "IsDeleted": false,
+        "Name": "EXC-00008",
+        "CreatedDate": "2026-10-12T17:25:29.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:25:29.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:25:29.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fW1QAI"
+        },
+        "Id": "a02dL00000s6fW1QAI",
+        "IsDeleted": false,
+        "Name": "EXC-00012",
+        "CreatedDate": "2026-10-12T17:27:09.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:27:09.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:27:09.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fW2QAI"
+        },
+        "Id": "a02dL00000s6fW2QAI",
+        "IsDeleted": false,
+        "Name": "EXC-00013",
+        "CreatedDate": "2026-10-12T17:27:09.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:27:09.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:27:09.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fW3QAI"
+        },
+        "Id": "a02dL00000s6fW3QAI",
+        "IsDeleted": false,
+        "Name": "EXC-00014",
+        "CreatedDate": "2026-10-12T17:27:09.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:27:09.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:27:09.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fqzQAA"
+        },
+        "Id": "a02dL00000s6fqzQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00015",
+        "CreatedDate": "2026-10-12T17:27:48.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:27:48.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:27:48.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fr0QAA"
+        },
+        "Id": "a02dL00000s6fr0QAA",
+        "IsDeleted": false,
+        "Name": "EXC-00016",
+        "CreatedDate": "2026-10-12T17:27:48.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:27:48.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:27:48.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fsbQAA"
+        },
+        "Id": "a02dL00000s6fsbQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00017",
+        "CreatedDate": "2026-10-12T17:28:11.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:28:11.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:28:11.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6fscQAA"
+        },
+        "Id": "a02dL00000s6fscQAA",
+        "IsDeleted": false,
+        "Name": "EXC-00018",
+        "CreatedDate": "2026-10-12T17:28:11.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T17:28:11.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T17:28:11.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6hpZQAQ"
+        },
+        "Id": "a02dL00000s6hpZQAQ",
+        "IsDeleted": false,
+        "Name": "EXC-00019",
+        "CreatedDate": "2026-10-12T18:06:34.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T18:06:34.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T18:06:34.000+0000",
+        "LastViewedDate": "2026-10-13T04:11:32.000+0000",
+        "LastReferencedDate": "2026-10-13T04:11:32.000+0000",
+        "Expense_Report__c": "a01dL00002a5zbRQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6jWPQAY"
+        },
+        "Id": "a02dL00000s6jWPQAY",
+        "IsDeleted": false,
+        "Name": "EXC-00020",
+        "CreatedDate": "2026-10-12T18:36:25.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T18:36:25.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T18:36:25.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a5zbRQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s6jY1QAI"
+        },
+        "Id": "a02dL00000s6jY1QAI",
+        "IsDeleted": false,
+        "Name": "EXC-00021",
+        "CreatedDate": "2026-10-12T18:37:30.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-12T18:37:30.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-12T18:37:30.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a5zbRQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s78eUQAQ"
+        },
+        "Id": "a02dL00000s78eUQAQ",
+        "IsDeleted": false,
+        "Name": "EXC-00022",
+        "CreatedDate": "2026-10-13T01:55:12.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T01:55:12.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T01:55:12.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a7XxaQAE",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s78eVQAQ"
+        },
+        "Id": "a02dL00000s78eVQAQ",
+        "IsDeleted": false,
+        "Name": "EXC-00023",
+        "CreatedDate": "2026-10-13T01:55:12.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T01:55:12.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T01:55:12.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a7XxaQAE",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s78eWQAQ"
+        },
+        "Id": "a02dL00000s78eWQAQ",
+        "IsDeleted": false,
+        "Name": "EXC-00024",
+        "CreatedDate": "2026-10-13T01:55:12.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T01:55:12.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T01:55:12.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a7XxaQAE",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7G8zQAE"
+        },
+        "Id": "a02dL00000s7G8zQAE",
+        "IsDeleted": false,
+        "Name": "EXC-00025",
+        "CreatedDate": "2026-10-13T04:29:28.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T04:29:28.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T04:29:28.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a7fjsQAA",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7G90QAE"
+        },
+        "Id": "a02dL00000s7G90QAE",
+        "IsDeleted": false,
+        "Name": "EXC-00026",
+        "CreatedDate": "2026-10-13T04:29:28.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T04:29:28.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T04:29:28.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a7fjsQAA",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7G91QAE"
+        },
+        "Id": "a02dL00000s7G91QAE",
+        "IsDeleted": false,
+        "Name": "EXC-00027",
+        "CreatedDate": "2026-10-13T04:29:28.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T04:29:28.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T04:29:28.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a7fjsQAA",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Px3QAE"
+        },
+        "Id": "a02dL00000s7Px3QAE",
+        "IsDeleted": false,
+        "Name": "EXC-00028",
+        "CreatedDate": "2026-10-13T07:19:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:25:01.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:25:01.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Px4QAE"
+        },
+        "Id": "a02dL00000s7Px4QAE",
+        "IsDeleted": false,
+        "Name": "EXC-00029",
+        "CreatedDate": "2026-10-13T07:19:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:25:01.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:25:01.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Px5QAE"
+        },
+        "Id": "a02dL00000s7Px5QAE",
+        "IsDeleted": false,
+        "Name": "EXC-00030",
+        "CreatedDate": "2026-10-13T07:19:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:19:20.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:19:20.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Q0HQAU"
+        },
+        "Id": "a02dL00000s7Q0HQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00031",
+        "CreatedDate": "2026-10-13T07:19:42.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:25:01.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:25:01.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Q1tQAE"
+        },
+        "Id": "a02dL00000s7Q1tQAE",
+        "IsDeleted": false,
+        "Name": "EXC-00032",
+        "CreatedDate": "2026-10-13T07:19:55.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:25:01.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:25:01.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Q57QAE"
+        },
+        "Id": "a02dL00000s7Q57QAE",
+        "IsDeleted": false,
+        "Name": "EXC-00033",
+        "CreatedDate": "2026-10-13T07:20:20.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:20:20.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:20:20.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7QBZQA2"
+        },
+        "Id": "a02dL00000s7QBZQA2",
+        "IsDeleted": false,
+        "Name": "EXC-00034",
+        "CreatedDate": "2026-10-13T07:21:09.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T07:21:09.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T07:21:09.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eqXQAQ",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7RNlQAM"
+        },
+        "Id": "a02dL00000s7RNlQAM",
+        "IsDeleted": false,
+        "Name": "EXC-00035",
+        "CreatedDate": "2026-10-13T07:34:43.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T09:35:38.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T09:35:38.000+0000",
+        "LastViewedDate": "2026-10-13T09:35:37.000+0000",
+        "LastReferencedDate": "2026-10-13T09:35:37.000+0000",
+        "Expense_Report__c": "a01dL00002a8eNWQAY",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "Low",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Z5BQAU"
+        },
+        "Id": "a02dL00000s7Z5BQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00036",
+        "CreatedDate": "2026-10-13T08:34:25.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T08:34:25.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T08:34:25.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8qIGQAY",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7Z5CQAU"
+        },
+        "Id": "a02dL00000s7Z5CQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00037",
+        "CreatedDate": "2026-10-13T08:34:25.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T08:34:25.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T08:34:25.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8qIGQAY",
+        "Exception_Type__c": "Potential Duplicate",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7f9CQAQ"
+        },
+        "Id": "a02dL00000s7f9CQAQ",
+        "IsDeleted": false,
+        "Name": "EXC-00043",
+        "CreatedDate": "2026-10-13T10:28:02.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T10:28:09.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T10:28:09.000+0000",
+        "LastViewedDate": "2026-10-13T10:28:09.000+0000",
+        "LastReferencedDate": "2026-10-13T10:28:09.000+0000",
+        "Expense_Report__c": "a01dL00002a8SEIQA2",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "Low",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s7lHdQAI"
+        },
+        "Id": "a02dL00000s7lHdQAI",
+        "IsDeleted": false,
+        "Name": "EXC-00042",
+        "CreatedDate": "2026-10-13T10:25:55.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T10:27:11.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T10:27:11.000+0000",
+        "LastViewedDate": "2026-10-13T10:27:11.000+0000",
+        "LastReferencedDate": "2026-10-13T10:27:11.000+0000",
+        "Expense_Report__c": "a01dL00002a8SEIQA2",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "Low",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8ArKQAU"
+        },
+        "Id": "a02dL00000s8ArKQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00052",
+        "CreatedDate": "2026-10-13T16:51:21.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:51:21.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:51:21.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eNWQAY",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8ArLQAU"
+        },
+        "Id": "a02dL00000s8ArLQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00053",
+        "CreatedDate": "2026-10-13T16:51:21.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:51:21.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:51:21.000+0000",
+        "LastViewedDate": "2026-10-13T16:51:30.000+0000",
+        "LastReferencedDate": "2026-10-13T16:51:30.000+0000",
+        "Expense_Report__c": "a01dL00002a8eNWQAY",
+        "Exception_Type__c": "Missing Receipt",
+        "Severity__c": "Medium",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8ArMQAU"
+        },
+        "Id": "a02dL00000s8ArMQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00054",
+        "CreatedDate": "2026-10-13T16:51:21.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:51:21.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:51:21.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a8eNWQAY",
+        "Exception_Type__c": "Potential Duplicate",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8HarQAE"
+        },
+        "Id": "a02dL00000s8HarQAE",
+        "IsDeleted": false,
+        "Name": "EXC-00044",
+        "CreatedDate": "2026-10-13T15:57:24.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T15:57:24.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T15:57:24.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002aBlU6QAK",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8HxRQAU"
+        },
+        "Id": "a02dL00000s8HxRQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00045",
+        "CreatedDate": "2026-10-13T16:01:52.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:02:38.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:02:38.000+0000",
+        "LastViewedDate": "2026-10-13T16:02:38.000+0000",
+        "LastReferencedDate": "2026-10-13T16:02:38.000+0000",
+        "Expense_Report__c": "a01dL00002aBhGoQAK",
+        "Exception_Type__c": "Potential Duplicate",
+        "Severity__c": "Low",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8IIPQA2"
+        },
+        "Id": "a02dL00000s8IIPQA2",
+        "IsDeleted": false,
+        "Name": "EXC-00046",
+        "CreatedDate": "2026-10-13T16:05:59.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:08:50.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:08:50.000+0000",
+        "LastViewedDate": "2026-10-13T16:08:50.000+0000",
+        "LastReferencedDate": "2026-10-13T16:08:50.000+0000",
+        "Expense_Report__c": "a01dL00002aBhGoQAK",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Medium",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8IyLQAU"
+        },
+        "Id": "a02dL00000s8IyLQAU",
+        "IsDeleted": false,
+        "Name": "EXC-00047",
+        "CreatedDate": "2026-10-13T16:17:27.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:17:27.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:17:27.000+0000",
+        "LastViewedDate": "2026-10-13T16:24:47.000+0000",
+        "LastReferencedDate": "2026-10-13T16:24:47.000+0000",
+        "Expense_Report__c": "a01dL00002aBTx3QAG",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8PVBQA2"
+        },
+        "Id": "a02dL00000s8PVBQA2",
+        "IsDeleted": false,
+        "Name": "EXC-00048",
+        "CreatedDate": "2026-10-13T16:49:49.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:49:49.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:49:49.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Policy Violation",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8PVCQA2"
+        },
+        "Id": "a02dL00000s8PVCQA2",
+        "IsDeleted": false,
+        "Name": "EXC-00049",
+        "CreatedDate": "2026-10-13T16:49:49.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:49:49.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:49:49.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Missing Receipt",
+        "Severity__c": "Medium",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8PVDQA2"
+        },
+        "Id": "a02dL00000s8PVDQA2",
+        "IsDeleted": false,
+        "Name": "EXC-00050",
+        "CreatedDate": "2026-10-13T16:49:49.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:49:49.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:49:49.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Potential Duplicate",
+        "Severity__c": "High",
+        "Status__c": "Open"
+      },
+      {
+        "attributes": {
+          "type": "Expense_Validation_Exception__c",
+          "url": "/services/data/v68.0/sobjects/Expense_Validation_Exception__c/a02dL00000s8PVEQA2"
+        },
+        "Id": "a02dL00000s8PVEQA2",
+        "IsDeleted": false,
+        "Name": "EXC-00051",
+        "CreatedDate": "2026-10-13T16:49:49.000+0000",
+        "CreatedById": "005dL00001sYQIDQA4",
+        "LastModifiedDate": "2026-10-13T16:49:49.000+0000",
+        "LastModifiedById": "005dL00001sYQIDQA4",
+        "SystemModstamp": "2026-10-13T16:49:49.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "Expense_Report__c": "a01dL00002a60SbQAI",
+        "Exception_Type__c": "Budget Overrun",
+        "Severity__c": "Critical",
+        "Status__c": "Open"
+      }
+    ],
+    "totalSize": 50,
+    "done": true
+  },
+  "warnings": []
+}

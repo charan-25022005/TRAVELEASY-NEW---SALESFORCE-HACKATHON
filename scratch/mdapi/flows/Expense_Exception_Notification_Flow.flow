@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <actionCalls>
+        <description>Sends email notification to the reviewer when a High or Critical expense exception is detected.</description>
+        <name>Send_Exception_Notification_Email</name>
+        <label>Send Exception Notification Email</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Recipient_Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Email_Body</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <description>Checks if parent report approver is already assigned or can be inherited from the linked travel request approver.</description>
+        <name>Check_Reviewer_Assignment</name>
+        <label>Check Reviewer Assignment</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Check_Recipient_Email_Available</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Approver Already Assigned</defaultConnectorLabel>
+        <rules>
+            <name>Reviewer_Is_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Expense_Report__r.Approver__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Expense_Report__r.Travel_Request__r.Approver__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Parent_Report_Approver</targetReference>
+            </connector>
+            <label>Approver Is Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Confirms that a valid recipient email exists before sending notification.</description>
+        <name>Check_Recipient_Email_Available</name>
+        <label>Check Recipient Email Available</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>No Recipient Email</defaultConnectorLabel>
+        <rules>
+            <name>Has_Recipient_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Recipient_Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Recipient_Email</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Exception_Notification_Email</targetReference>
+            </connector>
+            <label>Has Recipient Email</label>
+        </rules>
+    </decisions>
+    <description>Dispatches notification and assigns reviewer when a High or Critical expense exception is detected.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Resolves reviewer email from parent expense report approver or linked travel request approver.</description>
+        <name>Recipient_Email</name>
+        <dataType>String</dataType>
+        <expression>BLANKVALUE({!$Record.Expense_Report__r.Approver__r.Email}, {!$Record.Expense_Report__r.Travel_Request__r.Approver__r.Email})</expression>
+    </formulas>
+    <interviewLabel>Expense Exception Notification Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Expense Exception Notification Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Assigns approver on the parent expense report from the travel request approver if missing.</description>
+        <name>Assign_Parent_Report_Approver</name>
+        <label>Assign Parent Report Approver</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Check_Recipient_Email_Available</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Expense_Report__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Approver__c</field>
+            <value>
+                <elementReference>$Record.Expense_Report__r.Travel_Request__r.Approver__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Expense_Report__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Reviewer_Assignment</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filters>
+            <field>Severity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Severity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Critical</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </filters>
+        <object>Expense_Validation_Exception__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Email subject for expense validation exception notification</description>
+        <name>Email_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>TravelEasy Alert: {!$Record.Severity__c} Expense Exception on {!$Record.Expense_Report__r.Name}</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Email body for expense validation exception notification</description>
+        <name>Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>A {!$Record.Severity__c} expense validation exception has been detected on Expense Report {!$Record.Expense_Report__r.Name} ({!$Record.Expense_Report__r.Report_Name__c}).
+
+Exception Details:
+- Exception Number: {!$Record.Name}
+- Exception Type: {!$Record.Exception_Type__c}
+- Severity: {!$Record.Severity__c}
+- Status: {!$Record.Status__c}
+- Description: {!$Record.Details__c}
+
+Parent Report Summary:
+- Expense Report: {!$Record.Expense_Report__r.Name} - {!$Record.Expense_Report__r.Report_Name__c}
+- Total Amount: INR {!$Record.Expense_Report__r.Total_Amount__c}
+- Employee: {!$Record.Expense_Report__r.Employee__r.Name}
+
+Please review this exception in TravelEasy. The expense report has blocking exceptions and cannot proceed to approval until resolved.
+
+TravelEasy Spend Control Platform</text>
+    </textTemplates>
+</Flow>

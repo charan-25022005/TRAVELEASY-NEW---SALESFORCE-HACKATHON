@@ -180,9 +180,12 @@ public inherited sharing class SmartExpenseControlService {
             seenTransactionsInBatch.add(dupKey);
 
             if (isItemFlagged) {
-                item.Is_Flagged_For_Review__c = true;
-                item.Flag_Reason__c = flagReason;
-                result.flaggedItems.put(item.Id, item);
+                Expense_Item__c flaggedItem = new Expense_Item__c(
+                    Id = item.Id,
+                    Is_Flagged_For_Review__c = true,
+                    Flag_Reason__c = flagReason
+                );
+                result.flaggedItems.put(item.Id, flaggedItem);
             }
         }
 
@@ -290,22 +293,27 @@ public inherited sharing class SmartExpenseControlService {
     private static Map<Id, Decimal> getTravelRequestTotals(List<Expense_Report__c> reports, List<Expense_Item__c> currentBatchItems) {
         Map<Id, Decimal> totals = new Map<Id, Decimal>();
         Set<Id> trIds = new Set<Id>();
-        Set<Id> repIds = new Set<Id>();
 
         for (Expense_Report__c rep : reports) {
             if (rep.Travel_Request__c != null) {
                 trIds.add(rep.Travel_Request__c);
-                repIds.add(rep.Id);
             }
         }
         if (trIds.isEmpty()) return totals;
 
-        // Sum existing items for these travel requests in DB (excluding current batch)
+        Set<Id> currentItemIds = new Set<Id>();
+        for (Expense_Item__c itm : currentBatchItems) {
+            if (itm.Id != null) {
+                currentItemIds.add(itm.Id);
+            }
+        }
+
+        // Sum existing items for these travel requests in DB (excluding items in current transaction)
         for (Expense_Item__c itm : [
             SELECT Amount__c, Expense_Report__r.Travel_Request__c
             FROM Expense_Item__c
             WHERE Expense_Report__r.Travel_Request__c IN :trIds
-              AND Expense_Report__c NOT IN :repIds
+              AND Id NOT IN :currentItemIds
         ]) {
             Id trId = itm.Expense_Report__r.Travel_Request__c;
             Decimal existing = totals.containsKey(trId) ? totals.get(trId) : 0;

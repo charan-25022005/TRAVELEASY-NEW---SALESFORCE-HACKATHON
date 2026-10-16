@@ -5,20 +5,29 @@
  */
 public inherited sharing class ExpenseReportTriggerHandler {
 
+    public static Boolean bypass = false;
+
     public static void handleBeforeInsert(List<Expense_Report__c> newReports) {
+        if (bypass) return;
         validateTravelRequestApproval(newReports);
+        handleSubmissionTransitions(newReports, null);
     }
 
     public static void handleBeforeUpdate(List<Expense_Report__c> newReports, Map<Id, Expense_Report__c> oldMap) {
+        if (bypass) return;
         validateTravelRequestApproval(newReports);
+        validateSubmissionRequirements(newReports, oldMap);
         validateApprovalRequirements(newReports, oldMap);
+        handleSubmissionTransitions(newReports, oldMap);
     }
 
     public static void handleAfterInsert(List<Expense_Report__c> newReports) {
+        if (bypass) return;
         // Post-insert hooks
     }
 
     public static void handleAfterUpdate(List<Expense_Report__c> newReports, Map<Id, Expense_Report__c> oldMap) {
+        if (bypass) return;
         List<Id> approvedReportIds = new List<Id>();
         List<Id> decisionReportIds = new List<Id>();
         List<Id> completedReimbursementIds = new List<Id>();
@@ -61,7 +70,7 @@ public inherited sharing class ExpenseReportTriggerHandler {
     private static void validateTravelRequestApproval(List<Expense_Report__c> reports) {
         Set<Id> trIds = new Set<Id>();
         for (Expense_Report__c rep : reports) {
-            if (rep.Travel_Request__c != null && rep.Status__c != 'Draft') {
+            if (rep.Travel_Request__c != null && rep.Status__c != 'Draft' && rep.Status__c != 'Exception Flagged') {
                 trIds.add(rep.Travel_Request__c);
             }
         }
@@ -75,10 +84,25 @@ public inherited sharing class ExpenseReportTriggerHandler {
         ]);
 
         for (Expense_Report__c rep : reports) {
-            if (rep.Travel_Request__c != null && rep.Status__c != 'Draft') {
+            if (rep.Travel_Request__c != null && rep.Status__c != 'Draft' && rep.Status__c != 'Exception Flagged') {
                 Travel_Request__c tr = trMap.get(rep.Travel_Request__c);
                 if (tr != null && tr.Status__c != 'Approved') {
                     rep.addError('Cannot submit or process expense report because the associated Travel Request is not Approved (Current status: ' + tr.Status__c + ').');
+                }
+            }
+        }
+    }
+
+    private static void validateSubmissionRequirements(List<Expense_Report__c> reports, Map<Id, Expense_Report__c> oldMap) {
+        for (Expense_Report__c rep : reports) {
+            Expense_Report__c oldRep = oldMap != null ? oldMap.get(rep.Id) : null;
+
+            if (rep.Has_Blocking_Exceptions__c) {
+                Boolean isSubmissionAttempt = (rep.Status__c == 'Submitted');
+                Boolean isUnderReviewTransition = (rep.Status__c == 'Under Review' && (oldRep == null || oldRep.Status__c != 'Under Review'));
+
+                if (isSubmissionAttempt || isUnderReviewTransition) {
+                    rep.addError('Cannot submit expense report while unresolved blocking policy exceptions exist. Please resolve all High and Critical exceptions first.');
                 }
             }
         }
@@ -99,6 +123,21 @@ public inherited sharing class ExpenseReportTriggerHandler {
             if (rep.Status__c == 'Rejected' && oldRep.Status__c != 'Rejected') {
                 if (String.isBlank(rep.Rejection_Reason__c)) {
                     rep.Rejection_Reason__c = 'Rejected during manager review.';
+                }
+            }
+        }
+    }
+
+    private static void handleSubmissionTransitions(List<Expense_Report__c> reports, Map<Id, Expense_Report__c> oldMap) {
+        for (Expense_Report__c rep : reports) {
+            Expense_Report__c oldRep = oldMap != null ? oldMap.get(rep.Id) : null;
+
+            if (rep.Status__c == 'Submitted' && (oldRep == null || oldRep.Status__c != 'Submitted')) {
+                if (rep.Submission_Date__c == null) {
+                    rep.Submission_Date__c = Date.today();
+                }
+                if (!rep.Has_Blocking_Exceptions__c) {
+                    rep.Status__c = 'Under Review';
                 }
             }
         }

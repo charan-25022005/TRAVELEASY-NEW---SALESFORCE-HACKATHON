@@ -3,21 +3,27 @@
  */
 public inherited sharing class TravelRequestTriggerHandler {
 
+    public static Boolean bypass = false;
+
     public static void handleBeforeInsert(List<Travel_Request__c> newRecords) {
+        if (bypass) return;
         assignDefaultApprovers(newRecords);
         validateDatesAndCost(newRecords);
     }
 
     public static void handleBeforeUpdate(List<Travel_Request__c> newRecords, Map<Id, Travel_Request__c> oldMap) {
+        if (bypass) return;
         validateDatesAndCost(newRecords);
         handleApprovalStateTransitions(newRecords, oldMap);
     }
 
     public static void handleAfterInsert(List<Travel_Request__c> newRecords) {
+        if (bypass) return;
         // Post-insert orchestration hook if needed
     }
 
     public static void handleAfterUpdate(List<Travel_Request__c> newRecords, Map<Id, Travel_Request__c> oldMap) {
+        if (bypass) return;
         List<Id> decisionTrIds = new List<Id>();
         for (Travel_Request__c tr : newRecords) {
             Travel_Request__c oldTr = oldMap.get(tr.Id);

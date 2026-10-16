@@ -116,7 +116,12 @@ global with sharing class TravelRequestRestResource {
             // 5. Approver assignment
             Id assignedApprover = currentUser.ManagerId != null ? currentUser.ManagerId : currentUserId;
 
-            // 6. Create Travel_Request__c record
+            // 6. Explicit authorization check & record creation
+            if (!Schema.sObjectType.Travel_Request__c.isCreateable()) {
+                sendError(res, 403, 'INSUFFICIENT_ACCESS', 'User does not have permission to create travel requests.', startTime, requestBody);
+                return;
+            }
+
             Travel_Request__c travelReq = new Travel_Request__c();
             travelReq.Employee__c = currentUserId;
             travelReq.Employee_ID__c = payload.employeeId;
@@ -129,7 +134,7 @@ global with sharing class TravelRequestRestResource {
             travelReq.Status__c = 'Submitted';
             travelReq.Approver__c = assignedApprover;
 
-            Database.SaveResult sr = Database.insert(travelReq, AccessLevel.USER_MODE);
+            Database.SaveResult sr = Database.insert(new List<Travel_Request__c>{ travelReq }, false, AccessLevel.USER_MODE)[0];
             if (!sr.isSuccess()) {
                 String dmlError = sr.getErrors()[0].getMessage();
                 sendError(res, 400, 'SAVE_FAILED', dmlError, startTime, requestBody);
@@ -158,6 +163,8 @@ global with sharing class TravelRequestRestResource {
                 durationMs
             );
 
+        } catch (DmlException dmlEx) {
+            sendError(res, 400, 'SAVE_FAILED', dmlEx.getMessage(), startTime, requestBody);
         } catch (Exception ex) {
             sendError(res, 500, 'INTERNAL_SERVER_ERROR', ex.getMessage(), startTime, requestBody);
         }

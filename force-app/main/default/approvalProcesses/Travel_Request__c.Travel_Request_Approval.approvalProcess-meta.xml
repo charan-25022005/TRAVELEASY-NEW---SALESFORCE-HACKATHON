@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Approver__c</field>
+        <field>Destination__c</field>
+        <field>Employee__c</field>
+        <field>Purpose__c</field>
+        <field>Travel_Start_Date__c</field>
+        <field>Travel_End_Date__c</field>
+        <field>Estimated_Cost__c</field>
+        <field>Status__c</field>
+        <field>Rejection_Reason__c</field>
+        <field>Notes__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Set_Travel_Request_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>traveleasy.manager.testing@gmail.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>travelEasy Manager reviews submitted travel requests and approves or rejects them</description>
+        <label>Manager Review</label>
+        <name>Manager_Review</name>
+    </approvalStep>
+    <description>Routes submitted travel requests to TravelEasy Manager for approval or rejection.</description>
+    <emailTemplate>unfiled$public/TravelEasy_Manager_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Travel_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Set_Travel_Request_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Travel_Request_Approved_Email</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Set_Travel_Request_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Travel_Request_Rejected_Email</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Travel Request Approval</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

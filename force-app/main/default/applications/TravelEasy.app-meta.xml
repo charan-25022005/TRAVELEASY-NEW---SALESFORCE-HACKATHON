@@ -6,7 +6,6 @@
     </brand>
     <description>TravelEasy — Intelligent Travel &amp; Spend Control Platform for enterprise travel requests, smart policy enforcement, exception management, and automated reimbursement.</description>
     <formFactors>Large</formFactors>
-    <isNavAutoUpdateEnabled>false</isNavAutoUpdateEnabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>TravelEasy</label>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Expense_Validation_Exception__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Auditable exception records raised by the Smart Expense Control Service for policy violations and spend overruns.</description>
+    <label>Smart Expense Exceptions</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Expense_Report__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Expense_Item__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Status__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Is_Blocking__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Reviewer__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Severity__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Exception_Type__c</field>
+            <table>Expense_Validation_Exception__c</table>
+        </columns>
+        <masterLabel>Expense Validation Exception Fields</masterLabel>
+    </sections>
+</ReportType>
